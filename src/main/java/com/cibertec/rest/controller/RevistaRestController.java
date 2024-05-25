@@ -91,4 +91,10 @@ public class RevistaRestController {
 		}
 	}
 
+	@GetMapping("/porNombreIgual/{nombre}")
+	public ResponseEntity<List<Revista>> listaRevistaPorNombreIgual(@PathVariable("nombre")String nombre) {
+		log.info("METODO --> listaRevistaPorNombreIgual");
+		return ResponseEntity.ok(servicio.listaRevistaPorNombreIgual("%"+nombre+"%"));
+	}
+
 }

@@ -10,6 +10,6 @@ import com.cibertec.rest.entity.Revista;
 public interface RevistaRepository extends JpaRepository<Revista, Integer> {
 
 	
-	@Query("select e from Revista e where e.nombre like ?1")
-	public List<Revista> listaRevistaPorNombre(String nombre);
+	@Query("select e from Revista e where e.nombre =?1")
+	public List<Revista> listaRevistaPorNombreIgual(String nombre);
 }
